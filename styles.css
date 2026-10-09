@@ -1,0 +1,405 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #e4e015;
+  line-height: 1.5;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)),
+    url("background.svg") center / cover no-repeat fixed;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 18px 32px;
+  background: rgb(47, 53, 128);
+  border-bottom: 4px solid #ffd84d;
+  position: sticky;        
+  top: 0;
+  z-index: 10;
+}
+
+nav h2 {
+  margin: 0;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+nav span {
+  color: #ffd84d;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  display: block;
+  padding: 8px 18px;
+  border-radius: 999px;     
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #e7e9dd;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+nav a.active {
+  background: #ffd84d;
+  color: #16213a;
+}
+
+button {
+  padding: 12px 26px;
+  border: 2px solid #2b55ff;
+  border-radius: 8px;
+  background: #2b55ff;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1c3fd1;
+  border-color: #1c3fd1;
+}
+
+button + button {
+  background: transparent;
+  color: #16213a;
+  border-color: #16213a;
+}
+
+button + button:hover {
+  background: #16213a;
+  color: white;
+}
+
+header {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 80px 32px 100px;
+  color: #080806;
+}
+
+header h1 {
+  margin: 0 0 20px;
+  font-size: 5rem;
+  line-height: 1.1;
+}
+
+header p {
+  margin: 0 0 32px;
+  font-size: 1.2rem;
+  color: #2e3a57;
+}
+
+header button {
+  margin-right: 12px;
+  margin-bottom: 12px;
+  padding: 14px 28px;
+}
+
+.products {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+}
+
+.products h2 {
+  font-size: 2rem;
+  color: #080806;
+  margin: 0 0 24px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: rgb(47, 53, 128);        
+  border-bottom: 4px solid #ffd84d;   
+  border-radius: 8px;
+  padding: 20px;
+  color: #e7e9dd;
+}
+
+.product-card h3 {
+  margin: 0 0 8px;
+}
+
+.product-card .description {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+}
+
+.product-card .price {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffd84d;
+}
+
+.product-card .stock {
+  margin: 4px 0 16px;
+  font-size: 0.9rem;
+}
+
+.product-card .stock.low {
+  color: #ff9d9d;
+}
+
+.product-card button {
+  width: 100%;
+}
+
+@media (max-width: 700px) {
+  nav {
+    justify-content: center;
+  }
+
+  header {
+    padding: 48px 20px 64px;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* ---------- Home sections ---------- */
+.features,
+.how,
+.cta {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 32px 64px;
+}
+
+.features h2,
+.how h2 {
+  font-size: 2rem;
+  color: #080806;
+  margin: 0 0 8px;
+}
+
+.sub {
+  margin: 0 0 24px;
+  color: #2e3a57;
+}
+
+/* Feature cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 16px;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.92);
+  color: #16213a;
+  border-radius: 12px;
+  border-bottom: 4px solid #ffd84d;
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card .icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.feature-card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.feature-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #2e3a57;
+}
+
+/* How it works */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.step {
+  background: rgba(255, 255, 255, 0.92);
+  color: #16213a;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.step b {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: #ffd84d;
+}
+
+.step h3 {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+}
+
+.step p {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #2e3a57;
+}
+
+/* Call to action */
+.cta {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 64px;
+  background: rgb(47, 53, 128);
+  border-bottom: 4px solid #ffd84d;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.cta h2 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.cta p {
+  margin: 0 0 24px;
+  color: #e7e9dd;
+}
+
+.cta button {
+  background: #ffd84d;
+  border-color: #ffd84d;
+  color: #16213a;
+}
+
+.cta button:hover {
+  background: #ffe480;
+  border-color: #ffe480;
+}
+
+/* Footer */
+.site-footer {
+  background: rgb(22, 33, 58);
+  border-top: 4px solid #ffd84d;
+  color: #d4d7e6;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1.6fr;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 48px 32px 32px;
+}
+
+.footer-col h3 {
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.footer-col h3 span {
+  color: #ffd84d;
+}
+
+.footer-col h4 {
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.footer-col p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-col ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 8px;
+  font-size: 0.92rem;
+}
+
+.footer-col a:hover {
+  color: #ffd84d;
+}
+
+.footer-bottom {
+  padding: 16px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .cta {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
+
+
+nav a.logo {
+  display: inline;
+  padding: 0;
+  border-radius: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: #ffffff;
+  background: none;
+}
+
+nav a.logo:hover {
+  background: none;
+  color: #ffffff;
+  opacity: 0.85;
+}
